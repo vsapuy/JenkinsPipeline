@@ -1,0 +1,53 @@
+pipeline {
+    agent any
+    
+    environment {
+        DIRECTORY_PATH = "/user/pipeline/code/directory"
+        TESTING_ENVIRONMENT = "pipeline-testing-environment"
+        PRODUCTION_ENVIRONMENT = "Victor Alvarado"
+    }
+    
+    stages {
+        stage('Build') {
+            steps {
+                echo "fetch the source code from the directory path specified by the environment variable"
+                echo "compile the code and generate any necessary artifacts"
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                echo "unit tests"
+                echo "integration tests"
+            }
+        }
+        
+        stage('Code Quality Check') {
+            steps {
+                echo "check the quality of the code"
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                echo "deploy the application to a testing environment specified by the environment variable"
+            }
+        }
+        
+        stage('Approval') {
+            steps {
+                // input message: 'Approve deployment?', submitter: 'user', parameters: []
+                sleep(time: 10, unit: 'SECONDS')
+            }
+        }
+        
+        stage('Deploy to Production') {
+            steps {
+                echo "Directory Path is: ${DIRECTORY_PATH}"
+                echo "Testing Environment is: ${TESTING_ENVIRONMENT}"
+                echo "Production Environment is: ${PRODUCTION_ENVIRONMENT}"
+                
+            }
+        }
+    }
+}
