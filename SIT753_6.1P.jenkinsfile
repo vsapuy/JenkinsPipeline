@@ -45,7 +45,7 @@ pipeline {
                     mail to: "vsapuy.edu@gmail.com",
                     subject: "Unit and Integration Tests - ${currentBuild.currentResult}",
                     body: "The Unit and Integration Tests stage has ${currentBuild.currentResult}."
-                    // attachLog: true
+                    attachLog: true
                     
                 }
             }
