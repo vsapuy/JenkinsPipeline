@@ -41,8 +41,7 @@ pipeline {
                 echo 'TesNG completed Unit and Integration Tests!'
             }
             post {
-                always{
-                    
+                success {
                     to: 'vsapuy.edu@gmail.com',
                     subject: "Unit and Integration Tests - ${currentBuild.currentResult}",
                     body: "The Unit and Integration Tests stage has ${currentBuild.currentResult}.",
@@ -86,8 +85,7 @@ pipeline {
                 echo 'Security Scan has Finished.'
             }
             post {
-                always {
-                    
+                success {
                     to: 'vsapuy.edu@gmail.com',
                     subject: "Security Scan - ${currentBuild.currentResult}",
                     body: "The Security Scan stage has ${currentBuild.currentResult}.",
