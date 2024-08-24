@@ -41,13 +41,13 @@ pipeline {
                 echo 'TesNG completed Unit and Integration Tests!'
             }
             post {
-                always {
-                    emailext(
-                        to: 'vsapuy.edu@gmail.com',
-                        subject: "Unit and Integration Tests - ${currentBuild.currentResult}",
-                        body: "The Unit and Integration Tests stage has ${currentBuild.currentResult}.",
-                        attachLog: true
-                    )
+                always{
+                    
+                    to: 'vsapuy.edu@gmail.com',
+                    subject: "Unit and Integration Tests - ${currentBuild.currentResult}",
+                    body: "The Unit and Integration Tests stage has ${currentBuild.currentResult}.",
+                    attachLog: true
+                    
                 }
             }
         }
@@ -87,12 +87,12 @@ pipeline {
             }
             post {
                 always {
-                    emailext(
-                        to: 'vsapuy.edu@gmail.com',
-                        subject: "Security Scan - ${currentBuild.currentResult}",
-                        body: "The Security Scan stage has ${currentBuild.currentResult}.",
-                        attachLog: true
-                    )
+                    
+                    to: 'vsapuy.edu@gmail.com',
+                    subject: "Security Scan - ${currentBuild.currentResult}",
+                    body: "The Security Scan stage has ${currentBuild.currentResult}.",
+                    attachLog: true
+                    
                 }
             }
         }
