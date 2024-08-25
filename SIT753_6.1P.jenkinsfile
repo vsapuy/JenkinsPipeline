@@ -44,8 +44,8 @@ pipeline {
                 success {
                     mail to: "vsapuy.edu@gmail.com",
                     subject: "Unit and Integration Tests - ${currentBuild.currentResult}",
-                    body: "The Unit and Integration Tests stage has ${currentBuild.currentResult}.",
-                    attachLog: true
+                    body: "The Unit and Integration Tests stage has ${currentBuild.currentResult}."
+                    // attachLog: true
                     
                 }
             }
@@ -161,8 +161,8 @@ pipeline {
             emailext(
                 to: "vsapuy.edu@gmail.com",
                 subject: "Pipeline Status - ${currentBuild.currentResult}",
-                body: "The Pipeline has ${currentBuild.currentResult}.",
-                attachLog: true
+                body: "The Pipeline has ${currentBuild.currentResult}."
+                //attachLog: true
             )
         }
     }
