@@ -4,10 +4,8 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh """
-                    # Your build commands here
-                    ./build.sh > build.log 2>&1
-                    """
+                    // Simulate build steps and log creation
+                    sh 'echo "This is a test log" > build.log'
                 }
             }
         }
@@ -15,16 +13,13 @@ pipeline {
     post {
         always {
             archiveArtifacts artifacts: 'build.log', allowEmptyArchive: true
-            script {
-                def logContent = readFile('build.log')
-                emailext(
-                    to: 'vsapuy.edu@gmail.com',
-                    subject: "Build Status Email",
-                    body: "Build was successful. Please see the attached log file.",
-                    attachLog: true,
-                    attachmentsPattern: 'build.log'
-                )
-            }
+            emailext(
+                to: 'vsapuy.edu@gmail.com',
+                subject: "Build Status Email",
+                body: "Build was successful. Please see the attached log file.",
+                attachmentsPattern: 'build.log'
+            )
         }
     }
 }
+
