@@ -9,8 +9,8 @@ pipeline{
                 success{
                     mail to: "vsapuy.edu@gmail.com",
                     subject: "Build Status Email",
-                    body: "Build was successful!",
-                    attachLog: true
+                    body: "Build was successful!"
+                    // attachLog: true
                 }
             }
         }
