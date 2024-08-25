@@ -21,7 +21,7 @@ pipeline {
                     to: 'vsapuy.edu@gmail.com',
                     subject: "Build Status Email",
                     body: "Build was successful. Please see the attached log file.",
-                    attachLog: true,
+                    
                     attachmentsPattern: 'build.log'
                 )
             }
