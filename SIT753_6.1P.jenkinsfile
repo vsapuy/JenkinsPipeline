@@ -89,12 +89,12 @@ pipeline {
             }
             post {
                 success {
-                    
+
                     emailext(
                         to: "vsapuy.edu@gmail.com",
                         subject: "The Security Scan tests were - ${currentBuild.currentResult}",
                         body: """<p>Unit and Integration Tests were ${currentBuild.currentResult}</p>
-                                 <p>Check the attached log for details.</p>"""
+                                 <p>Check the attached log for details.</p>""",
                         attachLog: true
                     )
 
