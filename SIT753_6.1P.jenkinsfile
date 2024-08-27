@@ -169,7 +169,7 @@ pipeline {
             emailext(
                 to: "vsapuy.edu@gmail.com",
                 subject: "Pipeline Status - ${currentBuild.currentResult}",
-                body: "The Pipeline has ${currentBuild.currentResult}."
+                body: "The Pipeline has ${currentBuild.currentResult}.",
                 attachLog: true
             )
         }
