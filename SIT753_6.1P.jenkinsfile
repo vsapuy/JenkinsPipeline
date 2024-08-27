@@ -44,7 +44,7 @@ pipeline {
                 success {
                     emailext(
                         to: "vsapuy.edu@gmail.com",
-                        subject: "Unit and Integration Tests were: ${currentBuild.currentResult}",
+                        subject: "Unit and Integration Tests for demo were: ${currentBuild.currentResult}",
                         body: """<p>Unit and Integration Tests were successful!</p>
                                  <p>Check the attached log for details.</p>""",
                         attachLog : true 
