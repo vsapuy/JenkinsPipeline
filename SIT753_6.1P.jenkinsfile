@@ -11,9 +11,9 @@ pipeline {
             steps {
                 echo 'Gradel started building the code...'
                 echo "Gradel is compiling code"// Here, you would normally use a tool like Maven or Gradle.
-                sleep(time: 5, unit: 'SECONDS')
+                sleep(time: 1, unit: 'SECONDS')
                 echo "Gradel is packaging code"
-                sleep(time: 5, unit: 'SECONDS')
+                sleep(time: 1, unit: 'SECONDS')
                 echo 'Gradel completed building process!'
                 
             }
@@ -24,10 +24,10 @@ pipeline {
                 echo 'TesNG running Unit and Integration Tests...'
                 echo "Starting unit tests..."
                 echo 'Unit Tests: Assertions, Mocking'
-                sleep(time: 2, unit: 'SECONDS')
+                sleep(time: 1, unit: 'SECONDS')
                 echo "Starting parameterized tests..."
                 echo 'Parameterized Tests: Data-driven testing'
-                sleep(time: 2, unit: 'SECONDS')
+                sleep(time: 1, unit: 'SECONDS')
                 echo "Test configuration started..."
                 echo "Testing environment: Local"
                 echo "Starting integration tests..."
@@ -37,7 +37,7 @@ pipeline {
                 echo "Testing APIs..."
                 echo "Order of Execution tests..."
                 echo "Test Report generated..."
-                sleep(time: 2, unit: 'SECONDS')
+                sleep(time: 1, unit: 'SECONDS')
                 echo 'TesNG completed Unit and Integration Tests!'
             }
             post {
@@ -67,7 +67,7 @@ pipeline {
                 echo "Code Complexity Analysis.. checking for complex code"
                 echo "Code Cognitive Complexity Detection.. checking for complex code to understand"
                 echo "Code Debt Detection..."
-                sleep(time: 5, unit: 'SECONDS')
+                sleep(time: 1, unit: 'SECONDS')
                 echo "Code Debt Estimation. assigning debt value per issue.."
                 echo "Technical Debt ratio.. calculating the debt ratio to the Project"
                 echo "Coding Standards Detection.. checking for coding standards flaws"
@@ -134,7 +134,7 @@ pipeline {
                 echo "Testing APIs..."
                 echo "Order of Execution tests..."
                 echo "Test Report generated..."
-                sleep time: 2, unit: 'SECONDS'
+                sleep time: 1, unit: 'SECONDS'
                 echo 'TesNG completed Integration Tests on Staging!'
 
             }
@@ -170,7 +170,7 @@ pipeline {
                 to: "vsapuy.edu@gmail.com",
                 subject: "Pipeline Status - ${currentBuild.currentResult}",
                 body: "The Pipeline has ${currentBuild.currentResult}."
-                //attachLog: true
+                attachLog: true
             )
         }
     }
