@@ -3,7 +3,7 @@ pipeline {
     environment {
         DIRECTORY_PATH = "/user/pipeline/code/directory"
         TESTING_ENVIRONMENT = "pipeline-testing-environment"
-        PRODUCTION_ENVIRONMENT = "Victor Alvarado Puy"
+        PRODUCTION_ENVIRONMENT = "Victor Alvarado Puyarena"
     }
 
     stages {
